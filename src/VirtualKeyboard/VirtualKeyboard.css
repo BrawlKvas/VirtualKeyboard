@@ -1,0 +1,99 @@
+.keyField {
+  width: 800px;
+  height: 200px;
+  display: block;
+  margin: 50px auto;
+  padding: 20px;
+  resize: none;
+  font-size: 1.5em;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: scale .5s;
+}
+
+.keyboard__row {
+  display: flex;
+}
+
+.keyboard__key {
+  width: 46px;
+  height: 46px;
+  margin-top: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+  text-align: center;
+  line-height: 45px;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background-color: rgba(0, 0, 0, .1);
+  cursor: pointer;
+  transition: background-color .05s;
+}
+
+.keyboard__key:hover {
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.keyboard__key:active {
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.keyboard__key.press {
+  background-color: rgba(0, 0, 0, .3);
+}
+
+.keyboard__key.CapsLock {
+  position: relative;
+  line-height: 55px;
+}
+
+.keyboard__key.CapsLock::after {
+  content: '';
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.keyboard__key.CapsLock.active::after {
+  background-color: rgb(53, 212, 53);
+}
+
+.keyboard__key.ShiftLeft.active, .keyboard__key.ShiftRight.active {
+  background-color: rgb(53, 212, 53);
+}
+
+.keyboard__key.Backspace, .keyboard__key.Tab {
+  width: 72px !important;
+}
+
+.keyboard__key.CapsLock, .keyboard__key.Enter{
+  width: 87px !important;
+}
+
+.keyboard__key.ShiftLeft, .keyboard__key.ShiftRight {
+  width: 114px !important;
+}
+
+.keyboard__key.Space {
+  width: 400px !important;
+}
