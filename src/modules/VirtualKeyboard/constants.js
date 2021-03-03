@@ -1,0 +1,8 @@
+export const SHIFT_LEFT_CODE = 'ShiftLeft'
+export const SHIFT_RIGHT_CODE = 'ShiftRight'
+export const CAPSLOCK_CODE = 'CapsLock'
+export const TAB_CODE = 'Tab'
+export const ENTER_CODE = 'Enter'
+export const SPACE_CODE = 'Space'
+export const BACKSPACE_CODE = 'Backspace'
+export const LANG_CODE = 'Lang'

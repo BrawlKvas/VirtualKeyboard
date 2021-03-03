@@ -6,3 +6,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+.keyField {
+  width: 800px;
+  height: 200px;
+  display: block;
+  margin: 50px auto;
+  padding: 20px;
+  resize: none;
+  font-size: 1.5em;
+  outline: none;
+}
