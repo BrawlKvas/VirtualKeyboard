@@ -10,26 +10,35 @@ document.body.append(keyboard.getInsertElement())
 
 keyboard.init({ dPhysicalKeyboard: true })
 
+// ПРИМЕР РАБОТЫ С ВИРТУАЛЬНОЙ КЛАВИАТУРОЙ
 // key - символ
 // code - стандартный код кнопки (пример: KeyA) независимый от алфавита
 keyboard.subscribe('input', ({ key, code }) => {
-  setTimeout(() => $keyField.focus(), 0)
+  const posCursor = +$keyField.selectionEnd
+  const value = Array.from($keyField.value)
+
+  setTimeout(() => {
+    $keyField.focus()
+    $keyField.selectionEnd = posCursor + 1
+  }, 0)
 
   switch (code) {
     case 'Backspace':
-      $keyField.value = $keyField.value.slice(0, -1)
+      value.splice(posCursor - 1, 1)
       break
 
     case 'Space':
-      $keyField.value += ' '
+      value.splice(posCursor, 0, ' ')
       break
 
     case 'Enter':
-      $keyField.value += '\n'
+      value.splice(posCursor, 0, '\n')
       break
 
     default:
-      $keyField.value += key
+      value.splice(posCursor, 0, key)
       break
   }
+
+  $keyField.value = value.join('')
 })
